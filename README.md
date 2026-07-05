@@ -38,17 +38,23 @@ This work was published as a **Publication-Only abstract at ASCO (American Socie
 
 ```
 .
-├── code/
-│   ├── data/                  # Placeholder — see "Data" section below
-│   ├── preprocessing/         # MRI/PET preprocessing scripts
-│   ├── models/                # CNN encoders, fusion, training scripts
-│   ├── uncertainty/           # Monte Carlo dropout & uncertainty estimation
-│   ├── evaluation/            # Leave-one-out CV, metrics, deferral analysis
-│   └── requirements.txt
-├── results/
-│   ├── metrics/               # Accuracy, AUC, uncertainty-error correlation outputs
-│   ├── figures/                # Plots (ROC curves, uncertainty-accuracy plots, etc.)
-│   └── logs/                   # Training/evaluation logs
+├── sarcoma_multimodal_ai/         # Core code
+│   ├── can-img/                   # Dataset placeholder (imaging data not included — see "Data")
+│   ├── src/                       # Model, preprocessing, and training source code
+│   ├── run_loocv.py               # Leave-one-patient-out cross-validation runner
+│   ├── generate_labels.py         # Builds labels.csv from clinical metadata
+│   ├── labels.csv                 # Patient-level metastasis labels
+│   ├── INFOclinical_STS.xlsx      # Clinical metadata (TCIA cohort info)
+│   ├── environment.yml            # Conda environment spec
+│   └── README.md
+│
+├── result_visualization/          # Epoch-wise visualized results
+│   ├── epoch10-p10/                # Visualizations from the 10-patient exploratory run
+│   └── epoch10-p51/                # Visualizations from the full 51-patient leave-one-out run
+│
+├── data/                          # raw archives
+│   ├── *.zip                       # TCIA and GDC data archives (imaging + genomic/clinical, zipped)
+│
 └── README.md
 ```
 
