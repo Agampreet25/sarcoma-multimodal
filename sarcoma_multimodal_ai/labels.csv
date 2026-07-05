@@ -1,0 +1,61 @@
+patient_id,label
+STS_001,0
+STS_002,0
+STS_003,0
+STS_004,0
+STS_005,0
+STS_006,1
+STS_007,0
+STS_008,0
+STS_009,1
+STS_010,0
+STS_011,0
+STS_012,0
+STS_013,0
+STS_014,1
+STS_015,0
+STS_016,0
+STS_017,1
+STS_018,1
+STS_019,0
+STS_020,0
+STS_021,1
+STS_022,1
+STS_023,1
+STS_024,0
+STS_025,0
+STS_026,0
+STS_027,1
+STS_028,1
+STS_029,0
+STS_030,0
+STS_031,1
+STS_032,1
+STS_033,1
+STS_034,0
+STS_035,0
+STS_036,0
+STS_037,1
+STS_038,1
+STS_039,1
+STS_040,1
+STS_041,0
+STS_042,0
+STS_043,0
+STS_044,0
+STS_045,0
+STS_046,1
+STS_047,0
+STS_048,0
+STS_049,0
+STS_050,1
+STS_051,0
+,0
+NOTES,0
+MSKCC type: As defined by an expert radiation-oncologist of our institution using the classification of the Memorial Sloan-Kettering Cancer Center.,0
+"Time – diagnosis to MRI scan (days): Days elapsed between the date of biospy of the primary STS and the date of the MRI scan. If an entry is negative, the MRI scan was performed before the biospy.",0
+"Time – MRI scan to PET scan (days): Days elapsed between the MRI scan and the FDG-PET/CT scan. If an entry is negative, the FDG-PET/CT scan was performed before the MRI scan.",0
+Time – diagnosis to outcome: Days elapsed between the date of diagnosis of primary STS (biospy) and the date of diagnosis of recurrence or metastases.,0
+"Status: No Evidence of Disease (NED), Alive With Disease (AWD), Dead (D).",0
+"Time – diagnosis to last follow-up: Days elapsed between the date of diagnosis of primary STS (biopsy) and the date of last-follow-up (or death, if applicable).",0
+N/A: Not Available,0

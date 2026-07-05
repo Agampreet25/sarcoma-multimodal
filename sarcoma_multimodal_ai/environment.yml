@@ -1,0 +1,19 @@
+name: sarcoma_ai
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - python=3.9
+  - numpy
+  - pandas
+  - scikit-learn
+  - matplotlib
+  - pytorch
+  - torchvision
+  - torchaudio
+  - cpuonly
+  - pip
+  - pip:
+      - pydicom
+      - nibabel
+      - tqdm
