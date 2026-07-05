@@ -83,8 +83,7 @@ To reproduce results end-to-end, download the corresponding cohort directly from
 - **Secondary analysis:** 10-patient exploratory subset to test feasibility under extreme data scarcity
 
 ## 🖼️ Model Architecture
-
-![Model Architecture](./assets/model-architecture.jpg)
+*Note: the diagram is a schematic for illustrative purposes only, not an actual patient scan or exact layer-by-layer specification.*
 
 The pipeline runs left to right: paired pre-treatment MRI and FDG-PET scans are independently encoded by lightweight 3D CNNs (no voxel-level alignment needed), fused at the patient-level embedding stage, and passed through Monte Carlo dropout to produce both a risk score and an uncertainty estimate. High-uncertainty predictions are flagged for deferral rather than forced into a binary call, the model is designed to support clinical judgment, not replace it. Validation follows a leave-one-patient-out (LOOCV) protocol with calibration and uncertainty-based deferral analysis to guard against data leakage in this rare-cancer, small-cohort setting.
 
