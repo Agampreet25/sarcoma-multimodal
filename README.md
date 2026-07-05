@@ -48,12 +48,15 @@ This work was published as a **Publication-Only abstract at ASCO (American Socie
 │   ├── environment.yml            # Conda environment spec
 │   └── README.md
 │
-├── result_visualization/          # Epoch-wise visualized results
+├── results/                        # Zip file with epoch-wise visualized results
 │   ├── epoch10-p10/                # Visualizations from the 10-patient exploratory run
 │   └── epoch10-p51/                # Visualizations from the full 51-patient leave-one-out run
 │
 ├── data/                          # raw archives
-│   ├── *.zip                       # TCIA and GDC data archives (imaging + genomic/clinical, zipped)
+│   ├── *.zip                      # TCIA and GDC data archives (imaging + genomic/clinical, zipped)
+│
+├──  assets/
+│   ├──model-architecture.jpg        
 │
 └── README.md
 ```
@@ -78,6 +81,12 @@ To reproduce results end-to-end, download the corresponding cohort directly from
 - **Validation:** Strict leave-one-patient-out cross-validation (no patient overlap between train/test)
 - **Metrics:** Accuracy, AUC, uncertainty–error correlation, uncertainty-based deferral analysis
 - **Secondary analysis:** 10-patient exploratory subset to test feasibility under extreme data scarcity
+
+## 🖼️ Model Architecture
+
+![Model Architecture](./assets/model-architecture.jpg)
+
+The pipeline runs left to right: paired pre-treatment MRI and FDG-PET scans are independently encoded by lightweight 3D CNNs (no voxel-level alignment needed), fused at the patient-level embedding stage, and passed through Monte Carlo dropout to produce both a risk score and an uncertainty estimate. High-uncertainty predictions are flagged for deferral rather than forced into a binary call, the model is designed to support clinical judgment, not replace it. Validation follows a leave-one-patient-out (LOOCV) protocol with calibration and uncertainty-based deferral analysis to guard against data leakage in this rare-cancer, small-cohort setting.
 
 ## 📊 Key Results
 
