@@ -6,11 +6,11 @@ This repository contains the code, models, and (partial) data pipeline for our s
 
 This work was published as a **Publication-Only abstract at ASCO (American Society of Clinical Oncology) 2026**, under the Sarcoma track.
 
-> 📌 **If you use this code, methodology, or any part of this work, please cite the publication (see [Citation](#citation) below).**
+>  **If you use this code, methodology, or any part of this work, please cite the publication (see [Citation](#citation) below).**
 
 ---
 
-## 📄 Publication
+##  Publication
 
 **Title:** Uncertainty-aware multimodal imaging for lung metastasis risk stratification in extremity soft-tissue sarcoma
 **Authors:** Manpreet Saini, Agampreet Saini, Erik Cambria
@@ -20,7 +20,7 @@ This work was published as a **Publication-Only abstract at ASCO (American Socie
 
 ---
 
-## 🧬 Abstract
+##  Abstract
 
 **Background:** Imaging-based risk prediction in soft-tissue sarcoma has traditionally relied on radiomics and deep learning models optimized purely for discrimination (accuracy, AUC). Most prior studies use small cohorts without any assessment of predictive uncertainty — implicitly assuming every prediction is equally reliable. This is a critical gap for rare cancers like STS, where model confidence is fundamentally constrained by small sample sizes and high biological heterogeneity.
 
@@ -34,7 +34,7 @@ This work was published as a **Publication-Only abstract at ASCO (American Socie
 
 ---
 
-## 🗂️ Repository Structure
+##  Repository Structure
 
 ```
 .
@@ -61,7 +61,7 @@ This work was published as a **Publication-Only abstract at ASCO (American Socie
 └── README.md
 ```
 
-## 💾 Data
+##  Data
 
 Data used in this study was obtained from **[The Cancer Imaging Archive (TCIA)](https://www.cancerimagingarchive.net/)**, using pre-treatment MRI and FDG-PET scans for extremity soft-tissue sarcoma patients with confirmed lung metastasis outcomes.
 
@@ -71,7 +71,7 @@ Due to size constraints, the **full imaging dataset is not included in this repo
 
 To reproduce results end-to-end, download the corresponding cohort directly from TCIA and place it according to the structure described in `code/data/README.md` (or the manifest JSON).
 
-## ⚙️ Methodology Summary
+##  Methodology Summary
 
 - **Modalities:** Pre-treatment MRI + FDG-PET (paired per patient)
 - **Cohort:** 51 patients (19 metastatic / 32 non-metastatic)
@@ -82,12 +82,12 @@ To reproduce results end-to-end, download the corresponding cohort directly from
 - **Metrics:** Accuracy, AUC, uncertainty–error correlation, uncertainty-based deferral analysis
 - **Secondary analysis:** 10-patient exploratory subset to test feasibility under extreme data scarcity
 
-## 🖼️ Model Architecture
+##  Model Architecture
 *Note: the diagram is a schematic for illustrative purposes only, not an actual patient scan or exact layer-by-layer specification.*
 
 The pipeline runs left to right: paired pre-treatment MRI and FDG-PET scans are independently encoded by lightweight 3D CNNs (no voxel-level alignment needed), fused at the patient-level embedding stage, and passed through Monte Carlo dropout to produce both a risk score and an uncertainty estimate. High-uncertainty predictions are flagged for deferral rather than forced into a binary call, the model is designed to support clinical judgment, not replace it. Validation follows a leave-one-patient-out (LOOCV) protocol with calibration and uncertainty-based deferral analysis to guard against data leakage in this rare-cancer, small-cohort setting.
 
-## 📊 Key Results
+##  Key Results
 
 | Setting | Accuracy | AUC | Notes |
 |---|---|---|---|
@@ -97,7 +97,7 @@ The pipeline runs left to right: paired pre-treatment MRI and FDG-PET scans are 
 
 The core finding: **incorrect predictions correlate with higher model uncertainty**, and selectively deferring on high-uncertainty cases meaningfully improves reliability on the remaining predictions — supporting uncertainty-aware deployment over point-estimate-only models in rare-cancer imaging AI.
 
-## 📖 Citation
+##  Citation
 
 If you use this code, data pipeline, or build on this work, please cite:
 
@@ -114,10 +114,10 @@ Or in plain text:
 
 > Saini, M., Saini, A. and Cambria, E., 2026. Uncertainty-aware multimodal imaging for lung metastasis risk stratification in extremity soft-tissue sarcoma.
 
-## 🙏 Acknowledgements
+##  Acknowledgements
 
 Imaging data provided by **The Cancer Imaging Archive (TCIA)**. No external research funding was received for this study (Research Sponsor: None).
 
-## 📬 Contact
+##  Contact
 
 For questions about this repository or the underlying research, please open an issue or reach out to the corresponding author(s) listed in the publication.
