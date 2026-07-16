@@ -120,4 +120,4 @@ Imaging data provided by **The Cancer Imaging Archive (TCIA)**. No external rese
 
 ##  Contact
 
-For questions about this repository or the underlying research, please open an issue or reach out to the corresponding author(s) listed in the publication.
+For questions about this repository or the underlying research, please open an issue or reach out to Agampreet Saini.
